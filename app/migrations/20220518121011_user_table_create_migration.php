@@ -18,6 +18,10 @@ final class UserTableCreateMigration extends Migration
 
             $table->string('password');
 
+            $table->string('token')->nullable();
+
+            $table->string('refresh_token')->nullable();
+
         });
     }
 

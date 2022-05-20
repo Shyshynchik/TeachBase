@@ -13,7 +13,9 @@ final class RoleTableCreateMigration extends Migration
 
             $table->increments('id');
 
-            $table->string('role');
+            $table->string('name');
+
+            $table->integer('code');
 
         });
     }
