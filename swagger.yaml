@@ -1,0 +1,139 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Swagger Project"
+host: "localhost:8080"
+basePath: "/api/v1/"
+schemes:
+  - "http"
+paths:
+  /register:
+    post:
+      tags:
+        - "project"
+      summary: "Create a new account"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        400:
+          description: "User already exists"
+          schema:
+            $ref: "#/definitions/RegisterResponse"
+  /auth:
+    post:
+      tags:
+        - "project"
+      summary: "Create a new account"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: '#/definitions/UserAuth'
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        400:
+          description: "Incorrect login or password"
+          schema:
+            $ref: "#/definitions/RegisterResponse"
+  /logout:
+    get:
+      tags:
+        - "project"
+      summary: "Logout"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        401:
+          description: "Unauthorized"
+      security:
+        - JWT: []
+  /profile:
+    get:
+      tags:
+        - "project"
+      summary: "Profile info"
+      parameters:
+        - in: "query"
+          name: "id"
+          type: "string"
+          required: true
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/ProfileResponse"
+        401:
+          description: "Unauthorized"
+      security:
+        - JWT: []
+  /postman/auth:
+    get:
+      tags:
+        - "project"
+      summary: "Postman auth"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        401:
+          description: "Unauthorized"
+      security:
+        - JWT: [ ]
+securityDefinitions:
+  JWT:
+    type: "apiKey"
+    in: "header"
+    name: "Token"
+definitions:
+  User:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      email:
+        type: "string"
+      password:
+        type: "string"
+  UserAuth:
+    type: "object"
+    properties:
+      email:
+        type: "string"
+      password:
+        type: "string"
+  ApiResponse:
+    type: "object"
+    properties:
+      success:
+        type: "boolean"
+  ProfileResponse:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      gender:
+        type: "string"
+      token:
+        type: "string"
+  RegisterResponse:
+    type: "object"
+    properties:
+      info:
+        type: "string"

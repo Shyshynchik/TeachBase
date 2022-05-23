@@ -35,3 +35,4 @@ composer dump-autoload
 ````shell
 php vendor/bin/phinx migrate
 ````
+Endpoint'ы указаны в файле [swagger](swagger.yaml)

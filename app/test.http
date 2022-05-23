@@ -1,10 +1,30 @@
 GET http://localhost:8080/api/v1/logout
+Token:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZW1haWwiOiJ0ZXN0IiwibmFtZSI6InRlc3QiLCJleHAiOjE2NTM4OTIxMjV9.9nDXmclc_ZUO9xs6Pill33IF5gou7izfw1ojHy5estw
 ###
-POST http://localhost:8080/api/v1/auth?email=newemail&password=pass
+POST http://localhost:8080/api/v1/auth
+Content-Type: application/json
+
+{
+  "email": "test",
+  "password": "test"
+}
 ###
-GET http://localhost:8080/api/v1/profile?id=5432
-Token:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImVtYWlsIjoibmV3ZW1haWwiLCJuYW1lIjoibmFtZSIsImV4cCI6MTY1MzA0MTA3OH0.ePRZcJ9sup5VKTQQ70hpk8rxMJqz78yiq4LBPVOCUJg
+GET http://localhost:8080/api/v1/profile
+Token:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZW1haWwiOiJ0ZXN0IiwibmFtZSI6InRlc3QiLCJleHAiOjE2NTM4OTI0MTN9.qVm940gJ_y6DkQ1ubT6z1G1e86lPAw-hIkzCPJL3zhI
+Content-Type: application/json
+
+{
+  "id" : "1234"
+}
 ###
 GET http://localhost:8080/api/v1/postman/auth
+Token:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZW1haWwiOiJ0ZXN0IiwibmFtZSI6InRlc3QiLCJleHAiOjE2NTM4OTI0MTN9.qVm940gJ_y6DkQ1ubT6z1G1e86lPAw-hIkzCPJL3zhI
 ###
-POST http://localhost:8080/api/v1/register?name=name&email=newemail&password=pass
+POST http://localhost:8080/api/v1/register
+Content-Type: application/json
+
+{
+  "name" : "string",
+  "email" : "string",
+  "password" : "string"
+}
