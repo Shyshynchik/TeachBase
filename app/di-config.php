@@ -24,5 +24,5 @@ return [
     AppConfigInterface::class => create(AppConfig::class)->constructor($config),
     UserInterface::class => get(User::class),
     PasswordHashedInterface::class => get(PasswordHashed::class),
-    JwtInterface::class => create(Jwt::class)->constructor($_ENV['TOKEN_KEY'], $_ENV['TOKEN_ALG'], $_ENV['REFRESH_TOKEN_KEY']),
+    JwtInterface::class => create(Jwt::class)->constructor($_ENV['TOKEN_KEY'], $_ENV['TOKEN_ALG']),
 ];
