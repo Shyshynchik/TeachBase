@@ -16,6 +16,7 @@ class SlimRouter
     private static array $instance;
     private const CONTROLLER_NAMESPACE = "\\App\\Controllers\\";
     private const MIDDLEWARE_NAMESPACE = "\\App\\MiddleWare\\";
+
     /**
      * @throws ReflectionException
      * @throws Throwable
