@@ -31,7 +31,7 @@ paths:
     post:
       tags:
         - "project"
-      summary: "Create a new account"
+      summary: "Authorization"
       parameters:
         - in: "body"
           name: "body"
