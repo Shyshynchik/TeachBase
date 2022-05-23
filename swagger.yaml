@@ -42,7 +42,7 @@ paths:
         200:
           description: "success"
           schema:
-            $ref: "#/definitions/ApiResponse"
+            $ref: "#/definitions/AuthToken"
         400:
           description: "Incorrect login or password"
           schema:
@@ -136,4 +136,9 @@ definitions:
     type: "object"
     properties:
       info:
+        type: "string"
+  AuthToken:
+    type: "object"
+    properties:
+      token:
         type: "string"
